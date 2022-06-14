@@ -1,15 +1,26 @@
 package main
 
+import "fmt"
+
 func main() {
 
-	cards := deck{"card 1", newCard()}
+	cards := newDeck()
 
-	cards = append(cards, "another card")
+	halfCards := len(cards)/2 + 10
 
 	cards.print()
+	fmt.Println("============all cards=============")
 
-}
+	hand, remainingCards := deal(cards, halfCards)
 
-func newCard() string {
-	return "The returned string"
+	hand.print()
+	fmt.Println("=============hand cards============")
+
+	remainingCards.print()
+	fmt.Println("=============remaining cards============")
+
+	fmt.Println(hand.toString())
+	fmt.Println("=============Strings============")
+
+	hand.saveToFile("cards")
 }
