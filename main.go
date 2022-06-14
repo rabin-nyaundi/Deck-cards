@@ -23,4 +23,8 @@ func main() {
 	fmt.Println("=============Strings============")
 
 	hand.saveToFile("cards")
+
+	file := newDeckFromFile("decks")
+	file.print()
+	fmt.Println("file:", file)
 }
