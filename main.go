@@ -27,4 +27,7 @@ func main() {
 	file := newDeckFromFile("decks")
 	file.print()
 	fmt.Println("file:", file)
+
+	cards.shuffle()
+	cards.print()
 }
